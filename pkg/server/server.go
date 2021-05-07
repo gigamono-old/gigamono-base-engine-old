@@ -24,7 +24,7 @@ type DocumentEngineServer struct {
 func NewDocumentEngineServer(app inits.App) (DocumentEngineServer, error) {
 	engine, err := engine.NewDocumentEngine(&app)
 	if err != nil {
-		logs.FmtPrintln("initialising Document Engine server:", err)
+		logs.FmtPrintln("initialising document engine server:", err)
 		return DocumentEngineServer{}, err
 	}
 	return DocumentEngineServer{

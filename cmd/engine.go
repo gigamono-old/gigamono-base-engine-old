@@ -11,18 +11,18 @@ func main() {
 	// Initialises app.
 	app, err := inits.NewApp("Resource")
 	if err != nil {
-		logs.FmtPrintln("Unable to initialize engine:", err)
+		logs.FmtPrintln("initialising document engine:", err)
 		return
 	}
 
 	// Start an engine gRPC server.
 	server, err := server.NewDocumentEngineServer(app)
 	if err != nil {
-		logs.FmtPrintln("Unable to create engine server:", err)
+		logs.FmtPrintln("creating document engine:", err)
 	}
 
 	// Listen on port.
 	if err := server.Listen(); err != nil {
-		logs.FmtPrintln("Unable to listen on port specified:", err)
+		logs.FmtPrintln("trying to listen on port specified:", err)
 	}
 }
