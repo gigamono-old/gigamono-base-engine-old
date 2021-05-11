@@ -4,7 +4,7 @@ go 1.15
 
 require (
 	github.com/99designs/gqlgen v0.13.0
-	github.com/gigamono/gigamono v0.0.0-20210429170035-dc351cb9ac0e
+	github.com/gigamono/gigamono v0.0.0-20210505114150-59066b8b3792
 	github.com/gigamono/gigamono-workflow-engine v0.0.0-20210429165056-56fff37e8f30
 	github.com/gin-gonic/gin v1.7.1
 	github.com/gofrs/uuid v4.0.0+incompatible
@@ -14,4 +14,4 @@ require (
 	google.golang.org/grpc v1.34.0
 )
 
-replace github.com/gigamono/gigamono v0.0.0-20210429170035-dc351cb9ac0e => ../gigamono
+replace github.com/gigamono/gigamono v0.0.0-20210505114150-59066b8b3792 => ../gigamono
