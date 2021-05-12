@@ -13,7 +13,7 @@ import (
 func (server *DocumentEngineServer) grpcServe() error {
 	listener, err := net.Listen(
 		"tcp",
-		fmt.Sprint(":", server.Config.Services.Types.DocumentEngine.PrivatePort),
+		fmt.Sprint(":", server.Config.Services.DocumentEngine.Ports.Private),
 	)
 	if err != nil {
 		return err

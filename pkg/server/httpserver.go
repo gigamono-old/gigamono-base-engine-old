@@ -11,7 +11,7 @@ import (
 func (server *DocumentEngineServer) httpServe() error {
 	listener, err := net.Listen(
 		"tcp",
-		fmt.Sprint(":", server.Config.Services.Types.DocumentEngine.PublicPort),
+		fmt.Sprint(":", server.Config.Services.DocumentEngine.Ports.Public),
 	)
 	if err != nil {
 		return err
