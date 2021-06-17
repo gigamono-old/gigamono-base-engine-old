@@ -9,29 +9,30 @@ import (
 	"github.com/gigamono/gigamono/pkg/inits"
 )
 
-// DocumentEngineServer is a grpc server with an engine.
-type DocumentEngineServer struct {
+// BaseEngineServer is a grpc server with an engine.
+type BaseEngineServer struct {
 	inits.App
-	GinEngine      *gin.Engine
-	DocumentEngine engine.DocumentEngine
+	GinEngine  *gin.Engine
+	BaseEngine engine.BaseEngine
 }
 
-// NewDocumentEngineServer creates a new server instance.
-func NewDocumentEngineServer(app inits.App) (DocumentEngineServer, error) {
-	engine, err := engine.NewDocumentEngine(&app)
+// NewBaseEngineServer creates a new server instance.
+func NewBaseEngineServer(app inits.App) (BaseEngineServer, error) {
+	engine, err := engine.NewBaseEngine(&app)
 	if err != nil {
-		logs.FmtPrintln("initialising document engine server:", err)
-		return DocumentEngineServer{}, err
+		logs.FmtPrintln("initialising base engine server:", err)
+		return BaseEngineServer{}, err
 	}
-	return DocumentEngineServer{
-		App:            app,
-		GinEngine:      gin.Default(),
-		DocumentEngine: engine,
+
+	return BaseEngineServer{
+		App:        app,
+		GinEngine:  gin.Default(),
+		BaseEngine: engine,
 	}, nil
 }
 
 // Listen makes the server listen on specified port.
-func (server *DocumentEngineServer) Listen() error {
+func (server *BaseEngineServer) Listen() error {
 	// Run servers concurrently and sync errors.
 	grp := new(errgroup.Group)
 	grp.Go(func() error { return server.grpcServe() })

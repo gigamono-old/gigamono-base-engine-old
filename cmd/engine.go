@@ -9,16 +9,16 @@ import (
 
 func main() {
 	// Initialises app.
-	app, err := inits.NewApp(inits.DocumentEngineMainServer)
+	app, err := inits.NewApp(inits.BaseEngineMainServer)
 	if err != nil {
-		logs.FmtPrintln("initialising document engine:", err)
+		logs.FmtPrintln("initialising base engine:", err)
 		return
 	}
 
 	// Start an engine gRPC server.
-	server, err := server.NewDocumentEngineServer(app)
+	server, err := server.NewBaseEngineServer(app)
 	if err != nil {
-		logs.FmtPrintln("creating document engine:", err)
+		logs.FmtPrintln("creating base engine:", err)
 	}
 
 	// Listen on port.

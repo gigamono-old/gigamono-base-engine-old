@@ -4,14 +4,14 @@ import (
 	"github.com/gigamono/gigamono/pkg/inits"
 )
 
-// DocumentEngine represents an engine instance.
-type DocumentEngine struct {
+// BaseEngine represents an engine instance.
+type BaseEngine struct {
 	*inits.App
 }
 
-// NewDocumentEngine creates a new document engine.
-func NewDocumentEngine(app *inits.App) (DocumentEngine, error) {
-	return DocumentEngine{
+// NewBaseEngine creates a new base engine.
+func NewBaseEngine(app *inits.App) (BaseEngine, error) {
+	return BaseEngine{
 		App: app,
 	}, nil
 }

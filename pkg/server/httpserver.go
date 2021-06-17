@@ -8,10 +8,10 @@ import (
 	"github.com/gigamono/gigamono-document-engine/internal/graphql"
 )
 
-func (server *DocumentEngineServer) httpServe() error {
+func (server *BaseEngineServer) httpServe() error {
 	listener, err := net.Listen(
 		"tcp",
-		fmt.Sprint(":", server.Config.Services.DocumentEngine.Ports.Public),
+		fmt.Sprint(":", server.Config.Services.BaseEngine.Ports.Public),
 	)
 	if err != nil {
 		return err
@@ -27,7 +27,7 @@ func (server *DocumentEngineServer) httpServe() error {
 	return httpServer.Serve(listener)
 }
 
-func (server *DocumentEngineServer) setRoutes() {
+func (server *BaseEngineServer) setRoutes() {
 	graphqlHandler := graphql.Handler(&server.App)
 	playgroundHandler := graphql.PlaygroundHandler()
 

@@ -10,10 +10,10 @@ import (
 	"google.golang.org/grpc/reflection"
 )
 
-func (server *DocumentEngineServer) grpcServe() error {
+func (server *BaseEngineServer) grpcServe() error {
 	listener, err := net.Listen(
 		"tcp",
-		fmt.Sprint(":", server.Config.Services.DocumentEngine.Ports.Private),
+		fmt.Sprint(":", server.Config.Services.BaseEngine.Ports.Private),
 	)
 	if err != nil {
 		return err
@@ -22,14 +22,14 @@ func (server *DocumentEngineServer) grpcServe() error {
 	grpcServer := grpc.NewServer() // Create a gRPC server.
 
 	// Register gRPC service.
-	generated.RegisterDocumentMainServerServer(grpcServer, server)
+	generated.RegisterBaseMainServerServer(grpcServer, server)
 	reflection.Register(grpcServer)
 
 	return grpcServer.Serve(listener) // Listen for requests.
 }
 
 // SayHello says Hello
-func (server *DocumentEngineServer) SayHello(ctx context.Context, msg *generated.Message) (*generated.Message, error) {
+func (server *BaseEngineServer) SayHello(ctx context.Context, msg *generated.Message) (*generated.Message, error) {
 	engineMsg := "Document Engine Main Server replies: " + msg.Content
 	fmt.Println(engineMsg)
 	response := generated.Message{
