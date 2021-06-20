@@ -4,7 +4,7 @@ import (
 	"github.com/gigamono/gigamono/pkg/inits"
 	"github.com/gigamono/gigamono/pkg/logs"
 
-	"github.com/gigamono/gigamono-document-engine/pkg/server"
+	"github.com/gigamono/gigamono-base-engine/pkg/server"
 )
 
 func main() {

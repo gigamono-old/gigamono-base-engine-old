@@ -5,8 +5,8 @@ import (
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/gin-gonic/gin"
 
-	"github.com/gigamono/gigamono-document-engine/internal/graphql/generated"
-	"github.com/gigamono/gigamono-document-engine/internal/graphql/resolver"
+	"github.com/gigamono/gigamono-base-engine/internal/graphql/generated"
+	"github.com/gigamono/gigamono-base-engine/internal/graphql/resolver"
 	"github.com/gigamono/gigamono/pkg/inits"
 	"github.com/gigamono/gigamono/pkg/services/graphql/directives"
 	"github.com/gigamono/gigamono/pkg/services/graphql/middleware"

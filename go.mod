@@ -1,11 +1,10 @@
-module github.com/gigamono/gigamono-document-engine
+module github.com/gigamono/gigamono-base-engine
 
 go 1.15
 
 require (
 	github.com/99designs/gqlgen v0.13.0
 	github.com/gigamono/gigamono v0.0.0-20210505114150-59066b8b3792
-	github.com/gigamono/gigamono-workflow-engine v0.0.0-20210429165056-56fff37e8f30
 	github.com/gin-gonic/gin v1.7.1
 	github.com/gofrs/uuid v4.0.0+incompatible
 	github.com/soheilhy/cmux v0.1.4

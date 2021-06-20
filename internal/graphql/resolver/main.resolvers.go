@@ -7,8 +7,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/gigamono/gigamono-document-engine/internal/graphql/generated"
-	"github.com/gigamono/gigamono-document-engine/internal/graphql/model"
+	"github.com/gigamono/gigamono-base-engine/internal/graphql/generated"
+	"github.com/gigamono/gigamono-base-engine/internal/graphql/model"
 )
 
 func (r *queryResolver) GetSessionUser(ctx context.Context) (*model.User, error) {

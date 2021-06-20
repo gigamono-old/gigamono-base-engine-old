@@ -5,7 +5,7 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/gigamono/gigamono-document-engine/internal/graphql"
+	"github.com/gigamono/gigamono-base-engine/internal/graphql"
 )
 
 func (server *BaseEngineServer) httpServe() error {

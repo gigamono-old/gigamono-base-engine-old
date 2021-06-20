@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/gigamono/gigamono-document-engine/pkg/engine"
+	"github.com/gigamono/gigamono-base-engine/pkg/engine"
 	"github.com/gigamono/gigamono/pkg/logs"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/sync/errgroup"
