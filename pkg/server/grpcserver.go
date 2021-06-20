@@ -22,7 +22,7 @@ func (server *BaseEngineServer) grpcServe() error {
 	grpcServer := grpc.NewServer() // Create a gRPC server.
 
 	// Register gRPC service.
-	generated.RegisterBaseMainServerServer(grpcServer, server)
+	generated.RegisterBaseEngineMainServerServer(grpcServer, server)
 	reflection.Register(grpcServer)
 
 	return grpcServer.Serve(listener) // Listen for requests.
